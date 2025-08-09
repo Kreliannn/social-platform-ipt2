@@ -1,0 +1,219 @@
+<!--
+  Instructor Course Creation Page Template
+
+  This page allows instructors to create new courses on the educational platform.
+  The form collects essential course details, including title, code, category,
+  description, start and end dates, and meeting information.  It uses the
+  familiar navigation structure and Tailwind CSS for styling.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduConnect – Create Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 antialiased">
+    <!-- Top Navigation -->
+    <header class="bg-white border-b shadow-sm fixed top-0 inset-x-0 z-50">
+      <div class="max-w-7xl mx-auto h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-4">
+          <a href="feed.html" class="text-2xl font-bold text-indigo-600">EduConnect</a>
+          <div class="hidden md:block">
+            <input
+              type="text"
+              placeholder="Search courses…"
+              class="w-64 bg-gray-100 border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="profile-button" class="flex items-center focus:outline-none">
+              <img
+                src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80"
+                alt="Avatar"
+                class="w-8 h-8 rounded-full"
+              />
+            </button>
+            <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-10">
+              <a href="profile.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">View Profile</a>
+              <a href="#settings" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Settings</a>
+              <a href="#logout" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="pt-16 max-w-7xl mx-auto flex flex-col lg:flex-row">
+      <!-- Left Sidebar -->
+      <aside class="hidden lg:block lg:w-64 bg-white border-r px-4 py-6 space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+          <nav class="space-y-2">
+            <a href="feed.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4-4-4-4m8 8l-4-4 4-4" />
+              </svg>
+              Feed
+            </a>
+            <a href="communities.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M3 8a4 4 0 014-4 4 4 0 014 4v4a4 4 0 01-4 4 4 4 0 01-4-4V8zM17 8a4 4 0 00-4-4 4 4 0 00-4 4v4a4 4 0 004 4 4 4 0 004-4V8z" />
+              </svg>
+              Communities
+            </a>
+            <a href="assignments.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 4H7m4 4h2M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+              </svg>
+              Assignments
+            </a>
+            <a href="#" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />
+              </svg>
+              Events
+            </a>
+            <a href="chat.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              </svg>
+              Chat
+            </a>
+            <a href="profile.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9 9 0 1118.878 6.196a9 9 0 01-13.757 11.608z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Profile
+            </a>
+            <a href="create_course.html" class="flex items-center text-indigo-600 font-medium">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              Create Course
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <!-- Course Creation Form -->
+      <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6">
+        <h1 class="text-2xl font-bold mb-6">Create a New Course</h1>
+        <div class="bg-white rounded-lg shadow p-6 max-w-3xl">
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label for="course-title" class="block text-sm font-medium text-gray-700">Course Title</label>
+              <input
+                type="text"
+                id="course-title"
+                name="course-title"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Introduction to Programming"
+              />
+            </div>
+            <div>
+              <label for="course-code" class="block text-sm font-medium text-gray-700">Course Code</label>
+              <input
+                type="text"
+                id="course-code"
+                name="course-code"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="CS101"
+              />
+            </div>
+            <div>
+              <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+              <select
+                id="category"
+                name="category"
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option>Computer Science</option>
+                <option>Mathematics</option>
+                <option>Science</option>
+                <option>Humanities</option>
+                <option>Business</option>
+              </select>
+            </div>
+            <div>
+              <label for="description" class="block text-sm font-medium text-gray-700">Course Description</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Provide a brief description of the course, learning objectives, and any prerequisites."
+              ></textarea>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
+                <input
+                  type="date"
+                  id="start-date"
+                  name="start-date"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label for="end-date" class="block text-sm font-medium text-gray-700">End Date</label>
+                <input
+                  type="date"
+                  id="end-date"
+                  name="end-date"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="meeting-info" class="block text-sm font-medium text-gray-700">Meeting Info</label>
+              <input
+                type="text"
+                id="meeting-info"
+                name="meeting-info"
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="e.g., Mondays & Wednesdays, 10 AM – 11 AM"
+              />
+            </div>
+            <div>
+              <label for="max-students" class="block text-sm font-medium text-gray-700">Maximum Students</label>
+              <input
+                type="number"
+                id="max-students"
+                name="max-students"
+                min="1"
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="30"
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Create Course
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script>
+      const profileBtn = document.getElementById('profile-button');
+      const profileDropdown = document.getElementById('profile-dropdown');
+      profileBtn.addEventListener('click', () => {
+        profileDropdown.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+        if (!profileBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+          profileDropdown.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

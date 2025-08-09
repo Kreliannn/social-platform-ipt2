@@ -1,0 +1,221 @@
+<!--
+  Students Enrollment Page Template
+
+  This page displays a list of students along with the courses they are
+  currently enrolled in.  The information is presented in a responsive table
+  within the standard application layout.  Tailwind CSS is used exclusively
+  for styling.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduConnect – Students & Enrollments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 antialiased">
+    <!-- Top Navigation -->
+    <header class="bg-white border-b shadow-sm fixed top-0 inset-x-0 z-50">
+      <div class="max-w-7xl mx-auto h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-4">
+          <a href="feed.html" class="text-2xl font-bold text-indigo-600">EduConnect</a>
+          <div class="hidden md:block">
+            <input
+              type="text"
+              placeholder="Search students…"
+              class="w-64 bg-gray-100 border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="profile-button" class="flex items-center focus:outline-none">
+              <img
+                src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80"
+                alt="Avatar"
+                class="w-8 h-8 rounded-full"
+              />
+            </button>
+            <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-10">
+              <a href="profile.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">View Profile</a>
+              <a href="#settings" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Settings</a>
+              <a href="#logout" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="pt-16 max-w-7xl mx-auto flex flex-col lg:flex-row">
+      <!-- Left Sidebar -->
+      <aside class="hidden lg:block lg:w-64 bg-white border-r px-4 py-6 space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+          <nav class="space-y-2">
+            <a href="feed.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4-4-4-4m8 8l-4-4 4-4" />
+              </svg>
+              Feed
+            </a>
+            <a href="communities.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M3 8a4 4 0 014-4 4 4 0 014 4v4a4 4 0 01-4 4 4 4 0 01-4-4V8zM17 8a4 4 0 00-4-4 4 4 0 00-4 4v4a4 4 0 004 4 4 4 0 004-4V8z" />
+              </svg>
+              Communities
+            </a>
+            <a href="assignments.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 4H7m4 4h2M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+              </svg>
+              Assignments
+            </a>
+            <a href="#" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7H3v10a2 2 0 002 2z" />
+              </svg>
+              Events
+            </a>
+            <a href="chat.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              </svg>
+              Chat
+            </a>
+            <a href="profile.html" class="flex items-center text-gray-600 hover:text-indigo-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A9 9 0 1118.878 6.196a9 9 0 01-13.757 11.608z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Profile
+            </a>
+            <a href="students_enrollment.html" class="flex items-center text-indigo-600 font-medium">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M20 9a4 4 0 00-4-4 4 4 0 00-4 4v5a4 4 0 004 4 4 4 0 004-4V9zM4 9a4 4 0 014-4 4 4 0 014 4v5a4 4 0 01-4 4 4 4 0 01-4-4V9z" />
+              </svg>
+              Students
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <!-- Main Content: Students table -->
+      <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6">
+        <h1 class="text-2xl font-bold mb-6">Students & Enrolled Courses</h1>
+        <div class="overflow-x-auto bg-white rounded-lg shadow">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Student</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Enrolled Courses</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <!-- Row 1 -->
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80" alt="" />
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">Jane Doe</div>
+                      <div class="text-sm text-gray-500">Biology major</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">jane.doe@example.edu</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Biology 101</li>
+                    <li>Chemistry 102</li>
+                    <li>English Literature</li>
+                  </ul>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80" alt="" />
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">John Smith</div>
+                      <div class="text-sm text-gray-500">Physics major</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">john.smith@example.edu</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Physics 201</li>
+                    <li>Calculus 102</li>
+                    <li>Computer Science 105</li>
+                  </ul>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80" alt="" />
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">Emily Chen</div>
+                      <div class="text-sm text-gray-500">Mathematics major</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">emily.chen@example.edu</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Calculus 201</li>
+                    <li>Statistics 202</li>
+                    <li>Data Structures</li>
+                  </ul>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1500522144261-ea64433bbe27?auto=format&fit=facearea&facepad=3&w=64&h=64&q=80" alt="" />
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">Sophia Lee</div>
+                      <div class="text-sm text-gray-500">Economics major</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sophia.lee@example.edu</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Microeconomics</li>
+                    <li>Macroeconomics</li>
+                    <li>Business Ethics</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <!-- JS for profile dropdown -->
+    <script>
+      const profileBtn = document.getElementById('profile-button');
+      const profileDropdown = document.getElementById('profile-dropdown');
+      profileBtn.addEventListener('click', () => {
+        profileDropdown.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+        if (!profileBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+          profileDropdown.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>
