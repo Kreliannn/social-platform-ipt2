@@ -1,0 +1,314 @@
+<!--
+  Template created using plain Tailwind CSS (via CDN).  This file demonstrates how
+  to build a simple, responsive landing page using the utility classes that
+  Tailwind provides without writing any custom CSS.  You can open this file
+  directly in a browser to see the result.  The layout includes a header,
+  hero section, feature grid, about section, call‑to‑action, and footer.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tailwind CSS Template</title>
+    <!-- Include Tailwind via CDN.  No custom CSS is used in this example. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="antialiased bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
+        <a href="#" class="text-xl font-semibold text-indigo-600">MyBrand</a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-indigo-600 transition">Features</a>
+          <a href="#about" class="text-gray-600 hover:text-indigo-600 transition">About</a>
+          <a href="#pricing" class="text-gray-600 hover:text-indigo-600 transition">Pricing</a>
+          <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contact</a>
+        </nav>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+          <!-- Simple hamburger icon constructed with spans -->
+          <span class="block w-6 h-0.5 bg-current mb-1"></span>
+          <span class="block w-6 h-0.5 bg-current mb-1"></span>
+          <span class="block w-6 h-0.5 bg-current"></span>
+        </button>
+      </div>
+      <!-- Mobile navigation (hidden by default) -->
+      <nav id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 bg-white border-t border-gray-200">
+        <a href="#features" class="block text-gray-600 hover:text-indigo-600">Features</a>
+        <a href="#about" class="block text-gray-600 hover:text-indigo-600">About</a>
+        <a href="#pricing" class="block text-gray-600 hover:text-indigo-600">Pricing</a>
+        <a href="#contact" class="block text-gray-600 hover:text-indigo-600">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-indigo-600 text-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 py-16 text-center">
+        <h1 class="text-3xl sm:text-5xl font-extrabold mb-4">
+          Build with Tailwind CSS
+        </h1>
+        <p class="text-lg sm:text-xl mb-8">
+          A simple, responsive template using only utility classes—no custom CSS.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <a
+            href="#features"
+            class="bg-white text-indigo-600 font-medium px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
+          >
+            Learn More
+          </a>
+          <a
+            href="#pricing"
+            class="border border-white font-medium px-6 py-3 rounded-md hover:bg-white hover:text-indigo-600 transition"
+          >
+            View Pricing
+          </a>
+        </div>
+      </div>
+      <!-- Decorative SVG at bottom of hero -->
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 500 50"
+          preserveAspectRatio="none"
+          class="w-full h-12 text-white"
+          fill="currentColor"
+        >
+          <path d="M0 0c150 30 350 30 500 0v50H0z" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-12">
+          Powerful Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 bg-indigo-100 text-indigo-600 rounded-full">
+              <!-- Simplified icon using SVG -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Easy to Use</h3>
+            <p class="text-gray-600">
+              Start developing your project quickly using Tailwind’s intuitive utility
+              classes.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 bg-indigo-100 text-indigo-600 rounded-full">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a7.5 7.5 0 00.6-3 7.5 7.5 0 00-.6-3m-3.4-4.6a7.5 7.5 0 00-3-1.4A7.5 7.5 0 009 3"/>
+                <path d="M4.6 9a7.5 7.5 0 00-.6 3c0 1 .2 2 .6 3m3.4 4.6a7.5 7.5 0 003 1.4A7.5 7.5 0 0015 21"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+            <p class="text-gray-600">
+              Your layout adapts seamlessly to any screen size, from phone to
+              desktop.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white rounded-lg shadow p-6 text-center">
+            <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 bg-indigo-100 text-indigo-600 rounded-full">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M12 1v22"/>
+                <path d="M5 5l14 14"/>
+                <path d="M5 19l14-14"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Utility‑First</h3>
+            <p class="text-gray-600">
+              Compose any design directly in your markup using Tailwind’s
+              utility‑first approach.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center md:space-x-12">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">About Us</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            This template is built entirely with Tailwind CSS, demonstrating how
+            you can quickly assemble a modern, responsive page without writing
+            custom styles. It features a modular design that’s easy to extend.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Use it as a starting point for your next landing page, marketing
+            website, or portfolio. Simply customize the content and adjust the
+            utility classes to suit your needs.
+          </p>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+            <!-- Placeholder image via unsplash; replace with your own if needed -->
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+              alt="About us"
+              class="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-12 text-gray-800">Simple Pricing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Basic Plan -->
+          <div class="bg-white p-8 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Basic</h3>
+            <p class="text-4xl font-bold text-indigo-600 mb-4">
+              $0<span class="text-lg font-normal text-gray-500">/mo</span>
+            </p>
+            <ul class="space-y-2 mb-6 text-gray-600">
+              <li>5 Projects</li>
+              <li>Community Support</li>
+              <li>Limited Features</li>
+            </ul>
+            <a
+              href="#"
+              class="block bg-indigo-600 text-white font-medium py-3 rounded-md hover:bg-indigo-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
+          <!-- Pro Plan -->
+          <div class="bg-white p-8 rounded-lg shadow border-2 border-indigo-600 transform scale-105">
+            <h3 class="text-xl font-semibold mb-4">Pro</h3>
+            <p class="text-4xl font-bold text-indigo-600 mb-4">
+              $29<span class="text-lg font-normal text-gray-500">/mo</span>
+            </p>
+            <ul class="space-y-2 mb-6 text-gray-600">
+              <li>Unlimited Projects</li>
+              <li>Priority Support</li>
+              <li>Advanced Features</li>
+            </ul>
+            <a
+              href="#"
+              class="block bg-indigo-600 text-white font-medium py-3 rounded-md hover:bg-indigo-700 transition"
+            >
+              Upgrade Now
+            </a>
+          </div>
+          <!-- Enterprise Plan -->
+          <div class="bg-white p-8 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+            <p class="text-4xl font-bold text-indigo-600 mb-4">
+              Custom
+            </p>
+            <ul class="space-y-2 mb-6 text-gray-600">
+              <li>Dedicated Account Manager</li>
+              <li>Custom Integrations</li>
+              <li>24/7 Support</li>
+            </ul>
+            <a
+              href="#"
+              class="block bg-indigo-600 text-white font-medium py-3 rounded-md hover:bg-indigo-700 transition"
+            >
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-indigo-600 text-white text-center">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to get started?</h2>
+        <p class="mb-8 text-lg sm:text-xl">
+          Sign up now and build beautiful websites with ease using Tailwind CSS.
+        </p>
+        <a
+          href="#"
+          class="bg-white text-indigo-600 font-medium px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
+        >
+          Join Free
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center text-gray-800">Contact Us</h2>
+        <div class="max-w-xl mx-auto">
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-700 mb-1">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 mb-1">Message</label>
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Write your message here..."
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-indigo-600 text-white font-medium px-6 py-3 rounded-md hover:bg-indigo-700 transition"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; <span id="current-year"></span> MyBrand. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Small script to update the current year in the footer and toggle mobile menu -->
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
